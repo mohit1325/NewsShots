@@ -1,0 +1,8 @@
+.flex-item--image{
+    float:left;
+    margin:0 10px 10px 0;
+}
+.flex-container{
+    display: flex;
+    flex-direction: row;
+}

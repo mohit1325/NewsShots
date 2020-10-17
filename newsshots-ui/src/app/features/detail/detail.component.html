@@ -1,0 +1,30 @@
+<div class="container mt-4">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>
+                <div class="flex-container">
+                    <h1>{{detailItem?.webTitle}}</h1>
+                    <button class="ml-5" mat-mini-fab [color]="!isBookMarked?'basic':'primary'"
+                        (click)="setBookMark(detailItem?.id)">
+                        <mat-icon>bookmark</mat-icon>
+                    </button>
+                    <button class="ml-2" mat-mini-fab color="basic" (click)="openBottomSheet()">
+                        <mat-icon>share</mat-icon>
+                    </button>
+                </div>
+            </mat-card-title>
+            <mat-card-subtitle>{{detailItem?.webPublicationDate|date:'medium'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="main-container mt-3">
+                <div class="flex-item--image">
+                    <img class="img-fluid" [src]="detailItem?.blocks?.main?.elements[0]?.assets[4]?.file"
+                        alt="Photo of a Shiba Inu">
+                </div>
+                <div class="flex-item--text">
+                    <div [innerHtml]="detailItem?.blocks?.body[0]?.bodyHtml"></div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>
