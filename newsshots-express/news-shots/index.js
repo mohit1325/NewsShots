@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.options('*', cors());
 app.get('/news/:category', cors(corsOptions), (req, res, next) => {
     // console.log(req.params.category);
-    axios.get(`https://content.guardianapis.com/search?section=${req.params.category}&api-key=62dddbd9-8799-4e67-8e0f-4b5843ea9ef1&page-size=20&show-blocks=main`)
+    axios.get(`https://content.guardianapis.com/search?section=${req.params.category}&api-key=/api-key/&page-size=20&show-blocks=main`)
         .then(response => {
             // console.log(response);
             results = response.data;
@@ -28,7 +28,7 @@ app.get('/news/:category', cors(corsOptions), (req, res, next) => {
 
 app.post('/details', cors(corsOptions), (req, res, next) => {
     const params = req.body;
-    axios.get(`https://content.guardianapis.com/search?ids=${params.id}&api-key=62dddbd9-8799-4e67-8e0f-4b5843ea9ef1&page-size=100&show-blocks=all`)
+    axios.get(`https://content.guardianapis.com/search?ids=${params.id}&api-key=/api-key/&page-size=100&show-blocks=all`)
         .then(response => {
             results = response.data;
             return res.send(results);
