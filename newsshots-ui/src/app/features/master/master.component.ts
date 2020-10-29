@@ -4,7 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { NgxSpinnerService } from "ngx-spinner";
 import { ShareComponent } from '../../core/share/share.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-master',
   templateUrl: './master.component.html',

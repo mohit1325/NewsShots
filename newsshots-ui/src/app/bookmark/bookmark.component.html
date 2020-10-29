@@ -1,0 +1,31 @@
+<div class="container-fluid full-width mb-3">
+    <div class="flex-container">
+        <ng-container *ngIf="bookMarkedItem && bookMarkedItem.length===0">
+            <h2 class="mt-5">No Bookmarked Items Found!</h2>
+        </ng-container>
+        <ng-container *ngFor="let item of data">
+            <div class="flex-item" *ngIf="item?.blocks?.main?.elements[0].assets[1]?.file">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <mat-card-title>{{item.sectionName|uppercase}}</mat-card-title>
+                    </mat-card-header>
+                    <img mat-card-image [src]="item?.blocks?.main?.elements[0].assets[1]?.file" loading="lazy">
+                    <mat-card-content>
+                        <h2>
+                            {{item.webTitle}}
+                        </h2>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button class="ml-2" mat-mini-fab color="basic"
+                            aria-label="Example icon button with a bookmark icon" (click)="openBottomSheet()">
+                            <mat-icon>share</mat-icon>
+                        </button>
+                        <button class="ml-2" mat-button (click)="getDetailPage(item.id)">
+                            Read More
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </ng-container>
+    </div>
+</div>

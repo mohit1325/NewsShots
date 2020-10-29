@@ -18,6 +18,7 @@ import { ShareComponent } from './core/share/share.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BookmarkComponent } from './bookmark/bookmark.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MasterComponent,
     DetailComponent,
     NotfoundComponent,
-    ShareComponent
+    ShareComponent,
+    BookmarkComponent
   ],
   imports: [
     BrowserModule,
